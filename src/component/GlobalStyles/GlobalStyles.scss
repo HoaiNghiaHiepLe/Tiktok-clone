@@ -3,6 +3,9 @@
 
 :root {
   --primary: #fe2c55;
+  --black: #000;
+  --text-gray: #828282;
+  --text-color: rgba(22, 24, 35, 1);
 }
 * {
   box-sizing: border-box;
@@ -20,4 +23,13 @@ body {
   min-height: 100vh;
   direction: ltr;
   -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+a[href] {
+  color: var(--text-color);
 }
