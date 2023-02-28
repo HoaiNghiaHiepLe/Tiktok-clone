@@ -5,6 +5,7 @@ export const HeaderContainer = styled.div`
   --search-height: 46px;
   --search-top-spacer: 9px;
   --search-btn-width: 52px;
+  --search-input-width: 361px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,11 +17,19 @@ export const HeaderContainer = styled.div`
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
   background: rgba(255, 255, 255, 1);
   color: rgba(22, 24, 35, 1);
+
+  .header_search,
+  .search_result {
+    width: var(--search-input-width);
+  }
+  .search_result {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
   .header_search {
     border: 1.5px solid transparent;
     display: flex;
     position: relative;
-    width: 361px;
     height: var(--search-height);
     background-color: rgba(22, 24, 35, 0.06);
     border-radius: var(--search-border-radius);
@@ -78,6 +87,25 @@ export const HeaderContainer = styled.div`
       transform: translateY(-50%);
       color: rgba(22, 24, 35, 0.34);
       font-size: 2.5rem;
+    }
+  }
+  .header_action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .more_button {
+      background: transparent;
+      margin-left: 16px;
+      padding: 6px 8px;
+      position: relative;
+      cursor: pointer;
+      font-style: normal;
+      padding: 0 4px;
+      .more_icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
     }
   }
 `;
