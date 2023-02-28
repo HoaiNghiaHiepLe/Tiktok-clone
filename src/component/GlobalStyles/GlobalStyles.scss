@@ -1,9 +1,11 @@
 @import "normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import "tippy.js/dist/tippy.css";
 
 :root {
   --primary: #fe2c55;
   --black: #000;
+  --white: #fff;
   --text-gray: #828282;
   --text-color: rgba(22, 24, 35, 1);
 }
@@ -32,4 +34,24 @@ input,
 }
 a[href] {
   color: var(--text-color);
+  text-decoration: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.text-pink {
+  color: var(--primary);
 }
