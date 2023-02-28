@@ -1,15 +1,14 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import DefaultLayout from "./layouts/Default";
+import FluidLayout from "./layouts/Fluid";
 
-import PublicLayout from "./layouts/Public";
-import PrivateLayout from "./layouts/Private";
-
-import { publicPages, privatePages } from "./pages";
+import { defaultPages, fluidPages } from "./pages";
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route element={<PublicLayout />}>
-          {publicPages.map((route, index) => {
+        <Route element={<DefaultLayout />}>
+          {defaultPages.map((route, index) => {
             return (
               <Route
                 key={index}
@@ -19,8 +18,8 @@ function App() {
             );
           })}
         </Route>
-        <Route element={<PrivateLayout />}>
-          {privatePages.map((route, index) => {
+        <Route element={<FluidLayout />}>
+          {fluidPages.map((route, index) => {
             return (
               <Route
                 key={index}
