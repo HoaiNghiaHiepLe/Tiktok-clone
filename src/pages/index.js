@@ -3,14 +3,14 @@ import DashBoard from "./DashBoard";
 
 import { ROUTES } from "~/constants/routes";
 
-export const publicPages = [
+export const defaultPages = [
   {
     path: ROUTES.PUBLIC.HOME,
     element: HomePage,
   },
 ];
 
-export const privatePages = [
+export const fluidPages = [
   {
     path: ROUTES.PRIVATE.DASHBOARD,
     element: DashBoard,

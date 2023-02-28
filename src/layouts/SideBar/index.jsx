@@ -1,7 +1,15 @@
 import React from "react";
 
-const Sidebar = () => {
-  return <div>Sidebar</div>;
+import Button from "~/component/Button";
+import * as S from "./styles";
+const Sidebar = ({ className }) => {
+  return (
+    <S.SidebarContainer className={className}>
+      <S.SidebarContent>
+        <Button>Sidebar</Button>
+      </S.SidebarContent>
+    </S.SidebarContainer>
+  );
 };
 
 export default Sidebar;

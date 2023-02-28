@@ -2,13 +2,13 @@ import { Outlet, Navigate } from "react-router-dom";
 import Header from "~/component/Header";
 import SideBar from "../SideBar";
 import * as S from "./styles";
-const PublicLayout = () => {
+const DefaultLayout = () => {
   return (
     <>
       <S.MainContainer>
-        <Header />
+        <Header className="header_default" />
         <S.MainContent>
-          <SideBar />
+          <SideBar className="sidebar_default" />
           <Outlet />
         </S.MainContent>
       </S.MainContainer>
@@ -16,4 +16,4 @@ const PublicLayout = () => {
   );
 };
 
-export default PublicLayout;
+export default DefaultLayout;

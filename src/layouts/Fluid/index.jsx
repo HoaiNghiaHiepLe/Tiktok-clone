@@ -2,13 +2,13 @@ import { Outlet, Navigate } from "react-router-dom";
 import Header from "~/component/Header";
 import SideBar from "../SideBar";
 import * as S from "./styles";
-const PrivateLayout = () => {
+const FluidLayout = () => {
   return (
     <>
       <S.MainContainer>
-        <Header />
+        <Header className="header_fluid" />
         <S.MainContent>
-          <SideBar />
+          <SideBar className="sidebar_fluid" />
           <Outlet />
         </S.MainContent>
       </S.MainContainer>
@@ -16,4 +16,4 @@ const PrivateLayout = () => {
   );
 };
 
-export default PrivateLayout;
+export default FluidLayout;
