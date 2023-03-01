@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import Button from "~/component/Button";
 
 export const HeaderContainer = styled.div`
   --search-border-radius: 92px;
@@ -100,6 +101,7 @@ export const HeaderContent = styled.div`
       font-size: 2.5rem;
     }
   }
+
   .header_action {
     display: flex;
     justify-content: center;
@@ -117,6 +119,18 @@ export const HeaderContent = styled.div`
         height: 20px;
         display: block;
       }
+    }
+    .user_avatar {
+      margin-left: 24px;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      background: center no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+      border-radius: 50%;
+      cursor: pointer;
+      background-image: url(${(prop) => prop.userImage});
     }
   }
 `;

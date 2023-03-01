@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PopperMenuWrapper = styled.div`
+export const MenuWrapper = styled.div`
   .wrapper_menu {
     padding-bottom: 8px;
   }
@@ -17,9 +17,13 @@ export const PopperMenuWrapper = styled.div`
       width: 100%;
       border: none;
       margin: 0;
+      font-weight: 600;
       &:hover {
         background-color: rgba(22, 24, 35, 0.03);
       }
+    }
+    .separate {
+      border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
   }
 `;

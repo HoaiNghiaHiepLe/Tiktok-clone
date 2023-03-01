@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import Tippy from "@tippyjs/react/headless";
+import { useEffect, forwardRef, useState, useRef } from "react";
+import Tippy from "@tippyjs/react";
+import HeadlessTippy from "@tippyjs/react/headless";
 import { Link } from "react-router-dom";
 
 import {
@@ -9,7 +10,10 @@ import {
 } from "react-icons/ai";
 import { CgSpinner } from "react-icons/cg";
 import { IoEllipsisVerticalSharp } from "react-icons/io5";
+import { BiMessageAltMinus } from "react-icons/bi";
+import { IoPaperPlaneOutline } from "react-icons/io5";
 
+import { MENU_ITEMS, userMenu } from "~/component/Popper/Menu/constants";
 import Button from "~/component/Button";
 import { PopperWrapper } from "~/component/Popper";
 import PopperAccountItem from "../PopperAccountItem";
@@ -26,14 +30,18 @@ const Header = ({ className }) => {
   const handleOnChange = (menuItem) => {
     console.log(menuItem);
   };
+
+  const currentUser = true;
+  const userImage =
+    "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/dc60cb071cfa78089851f938d59db628~c5_300x300.webp?x-expires=1677672000&x-signature=mmXT2od3OsLROhQ4cn4A2XtHpL4%3D";
   return (
     <S.HeaderContainer>
-      <S.HeaderContent className={className}>
+      <S.HeaderContent className={className} userImage={userImage}>
         <Link className="header_logo" to="/">
           <img src={images.logo.default} alt="Tiktok" />
         </Link>
         <div>
-          <Tippy
+          <HeadlessTippy
             interactive
             visible={searchResult.length > 0 ? true : false}
             render={(attrs) => (
@@ -62,17 +70,47 @@ const Header = ({ className }) => {
                 <AiOutlineSearch className="search_icon" />
               </button>
             </div>
-          </Tippy>
+          </HeadlessTippy>
         </div>
         <div className="header_action">
-          <Button prefixIcon={<AiOutlinePlus className="icon" />} text>
-            Upload
-          </Button>
-          <Button primary>Log in</Button>
-          <PopperMenu onChange={handleOnChange}>
-            <button className="more_button">
-              <IoEllipsisVerticalSharp className="more_icon" />
-            </button>
+          {currentUser ? (
+            <>
+              <Button prefixIcon={<AiOutlinePlus className="icon" />} text>
+                Upload
+              </Button>
+              <Tippy delay={[100, 200]} content="Message" placement="bottom">
+                <Button
+                  to="/message"
+                  iconbtn="true"
+                  prefixIcon={<IoPaperPlaneOutline className="icon" />}
+                />
+              </Tippy>
+              <Tippy delay={[100, 200]} content="Mailbox" placement="bottom">
+                <Button
+                  iconbtn="true"
+                  prefixIcon={<BiMessageAltMinus className="icon" />}
+                />
+              </Tippy>
+            </>
+          ) : (
+            <>
+              <Button prefixIcon={<AiOutlinePlus className="icon" />} text>
+                Upload
+              </Button>
+              <Button primary>Log in</Button>
+            </>
+          )}
+          <PopperMenu
+            item={currentUser ? userMenu : MENU_ITEMS}
+            onChange={handleOnChange}
+          >
+            {currentUser ? (
+              <div className="user_avatar" />
+            ) : (
+              <button className="more_button">
+                <IoEllipsisVerticalSharp className="more_icon" />
+              </button>
+            )}
           </PopperMenu>
         </div>
       </S.HeaderContent>

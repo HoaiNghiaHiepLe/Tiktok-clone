@@ -17,7 +17,6 @@ export const buttonStyles = css`
   .icon + .title {
     margin-left: 8px;
   }
-
   .icon {
     display: inline-block;
     width: 24px;
@@ -31,6 +30,19 @@ export const buttonStyles = css`
     border: 1px solid rgba(22, 24, 35, 0.12);
     &:hover {
       background: rgba(22, 24, 35, 0.03);
+    }
+  }
+  &.iconbtn {
+    cursor: pointer;
+    font-size: 2.6rem;
+    color: rgba(22, 24, 35, 1);
+    height: 32px;
+    width: 32px;
+    min-width: 0;
+    padding: 4px;
+    .icon {
+      height: 26px;
+      width: 26px;
     }
   }
   &.rounded {
@@ -93,6 +105,8 @@ const buttonAttrs = (props) => ({
     ${props.disable ? "disable" : ""}
     ${props.small ? "small" : ""}
     ${props.large ? "large" : ""}
+    ${props.iconbtn ? "iconbtn" : ""}
+    ${props.$separate ? "separate" : ""}
     ${props.className ? props.className : ""}
   `,
 });

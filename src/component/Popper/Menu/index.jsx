@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Tippy from "@tippyjs/react/headless";
 
-import MENU_ITEMS from "~/component/Popper/PopperMenu/constants";
 import MenuItems from "./MenuItems";
 import { PopperWrapper } from "~/component/Popper";
 import HeaderMenu from "./HeaderMenu";
@@ -9,8 +8,8 @@ import * as S from "./styles";
 
 const defaultFn = () => {};
 
-const PopperMenu = ({ children, onChange = defaultFn }) => {
-  const [menu, setMenu] = useState([{ data: MENU_ITEMS }]);
+const Menu = ({ item, children, onChange = defaultFn }) => {
+  const [menu, setMenu] = useState([{ data: item }]);
   console.log(menu, menu.length);
   const currentMenu = menu[menu.length - 1];
 
@@ -37,11 +36,11 @@ const PopperMenu = ({ children, onChange = defaultFn }) => {
   };
 
   return (
-    <S.PopperMenuWrapper>
+    <S.MenuWrapper>
       <Tippy
-        visible
-        delay={(0, 700)}
+        delay={[0, 700]}
         placement="bottom-end"
+        offset={[10, 10]}
         interactive
         render={(attrs) => (
           <div className="popper_menu" tabIndex="-1" {...attrs}>
@@ -61,11 +60,12 @@ const PopperMenu = ({ children, onChange = defaultFn }) => {
             </PopperWrapper>
           </div>
         )}
+        onHide={() => setMenu((prev) => prev.slice(0, 1))}
       >
         {children}
       </Tippy>
-    </S.PopperMenuWrapper>
+    </S.MenuWrapper>
   );
 };
 
-export default PopperMenu;
+export default Menu;
