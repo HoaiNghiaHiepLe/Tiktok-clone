@@ -108,7 +108,7 @@ const buttonAttrs = (props) => ({
     ${props.iconbtn ? "iconbtn" : ""}
     ${props.$separate ? "separate" : ""}
     ${props.className ? props.className : ""}
-  `,
+  `.trim(),
 });
 
 export const Button = styled.button.attrs(buttonAttrs)`
