@@ -1,6 +1,7 @@
 @import "normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import "tippy.js/dist/tippy.css";
+
 :root {
   --primary: #fe2c55;
   --black: #000;
@@ -52,7 +53,9 @@ li {
   margin: 0;
   padding: 0;
 }
-
+span {
+  line-height: 0;
+}
 .text-pink {
   color: var(--primary);
 }

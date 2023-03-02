@@ -87,7 +87,6 @@ export const HeaderContent = styled.div`
         background-color: rgba(22, 24, 35, 0.03);
       }
       .search_icon {
-        font-size: 2.5rem;
         color: var(--text-gray);
       }
     }
@@ -99,6 +98,7 @@ export const HeaderContent = styled.div`
       transform: translateY(-50%);
       color: rgba(22, 24, 35, 0.34);
       font-size: 2.5rem;
+      margin: 0px 12px;
     }
   }
 
@@ -130,7 +130,6 @@ export const HeaderContent = styled.div`
       background-size: cover;
       border-radius: 50%;
       cursor: pointer;
-      background-image: url(${(prop) => prop.userImage});
     }
   }
 `;
