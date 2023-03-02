@@ -4,10 +4,20 @@ import { BsCoin } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineLogout } from "react-icons/md";
+import {
+  GetCoin,
+  HelpCircleIcon,
+  KeyboardIcon,
+  LanguageIcon,
+  LiveIcon,
+  LogoutIcon,
+  SettingIcon,
+  UserIcon,
+} from "~/component/Icons";
 
 export const MENU_ITEMS = [
   {
-    icon: <IoLanguage />,
+    icon: <LanguageIcon />,
     title: "English",
     children: {
       title: "Language",
@@ -26,40 +36,40 @@ export const MENU_ITEMS = [
     },
   },
   {
-    icon: <IoHelpCircleOutline />,
+    icon: <HelpCircleIcon />,
     title: "Feedback and help",
     to: "/feedback",
   },
   {
-    icon: <RiKeyboardBoxLine />,
+    icon: <KeyboardIcon />,
     title: "Keyboard shortcuts",
   },
 ];
 
 export const userMenu = [
   {
-    icon: <AiOutlineUser />,
+    icon: <UserIcon />,
     title: "View profile",
     to: "/user/profile",
   },
   {
-    icon: <BsCoin />,
+    icon: <GetCoin />,
     title: "Get coins",
     to: "/coins",
   },
   {
-    icon: <RiLiveLine />,
+    icon: <LiveIcon />,
     title: "LIVE studio",
     to: "/live/studio",
   },
   {
-    icon: <FiSettings />,
+    icon: <SettingIcon />,
     title: "Setting",
     to: "/settings",
   },
   ...MENU_ITEMS,
   {
-    icon: <MdOutlineLogout />,
+    icon: <LogoutIcon />,
     title: "Logout",
     to: "/logout",
     separate: true,

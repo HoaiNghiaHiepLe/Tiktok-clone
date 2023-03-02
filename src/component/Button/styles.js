@@ -8,20 +8,26 @@ export const buttonStyles = css`
   font-weight: 700;
   font-size: 1.6rem;
   min-width: 100px;
-  padding: 9px 16px;
+  min-height: 36px;
+  padding: 0px 16px;
   border-radius: 4px;
   cursor: pointer;
   background-color: transparent;
   user-select: none;
+  line-height: 2.2rem;
+  .title {
+    line-height: 2.4rem;
+  }
+  .icon {
+    display: inline-block;
+    text-align: left;
+  }
+
   .title + .icon,
   .icon + .title {
     margin-left: 8px;
   }
-  .icon {
-    display: inline-block;
-    width: 24px;
-    text-align: left;
-  }
+
   &:not(:first-child) {
     margin-left: 16px;
   }
@@ -41,8 +47,8 @@ export const buttonStyles = css`
     min-width: 0;
     padding: 4px;
     .icon {
-      height: 26px;
-      width: 26px;
+      text-align: center;
+      vertical-align: middle;
     }
   }
   &.rounded {
