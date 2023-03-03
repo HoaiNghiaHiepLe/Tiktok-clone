@@ -1,7 +1,6 @@
 import { forwardRef, useState } from "react";
-import classNames from "classnames";
 import images from "~/assets/images";
-import styles from "./Image.module.scss";
+import * as S from "./styles";
 
 const Image = forwardRef(
   (
@@ -20,8 +19,8 @@ const Image = forwardRef(
     };
 
     return (
-      <img
-        className={(classNames(styles.wrapper), className)}
+      <S.ImageWrapper
+        className={className}
         src={fallback || src}
         alt={alt}
         ref={ref}

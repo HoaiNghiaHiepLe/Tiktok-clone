@@ -34,6 +34,9 @@ input,
   border: none;
   outline: none;
 }
+button {
+  cursor: pointer;
+}
 a[href] {
   color: var(--text-color);
   text-decoration: none;

@@ -39,6 +39,8 @@ export const buttonStyles = css`
     }
   }
   &.iconbtn {
+    position: relative;
+    display: flex;
     cursor: pointer;
     font-size: 2.6rem;
     color: rgba(22, 24, 35, 1);
@@ -49,6 +51,20 @@ export const buttonStyles = css`
     .icon {
       text-align: center;
       vertical-align: middle;
+    }
+    .badge {
+      position: absolute;
+      top: -3px;
+      right: 0px;
+      padding: 0px 6px;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      font-family: var(--font-family);
+      background-color: var(--primary);
     }
   }
   &.rounded {
