@@ -9,6 +9,7 @@ const PopperAccountItem = () => {
     <S.AccountItemWrapper>
       <span className="avatar_wrapper">
         <Image
+          fallback="https://www.strivemindz.com/images/ReactJS-Developers.png"
           className="avatar"
           src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/dc60cb071cfa78089851f938d59db628~c5_300x300.webp?x-expires=1677672000&x-signature=mmXT2od3OsLROhQ4cn4A2XtHpL4%3D"
           alt="UserAvatar"

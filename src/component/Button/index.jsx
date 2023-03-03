@@ -13,6 +13,7 @@ const Button = forwardRef(
       className,
       prefixIcon,
       sufixIcon,
+      badge,
       ...restProps
     },
     ref
@@ -48,6 +49,7 @@ const Button = forwardRef(
         {prefixIcon && <span className="icon"> {prefixIcon}</span>}
         <span className="title">{children}</span>
         {sufixIcon && <span className="icon"> {prefixIcon}</span>}
+        {badge && <span className="badge"> {badge}</span>}
       </StyledComponent>
     );
   }
