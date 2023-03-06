@@ -10,7 +10,6 @@ const defaultFn = () => {};
 
 const Menu = ({ item, children, onChange = defaultFn }) => {
   const [menu, setMenu] = useState([{ data: item }]);
-  console.log(menu, menu.length);
   const currentMenu = menu[menu.length - 1];
 
   const renderMenuItems = () => {
@@ -22,10 +21,7 @@ const Menu = ({ item, children, onChange = defaultFn }) => {
           data={item}
           onClick={() => {
             if (isParent) {
-              setMenu((prev) => {
-                console.log(prev, prev.length);
-                return [...prev, item.children];
-              });
+              setMenu((prev) => [...prev, item.children]);
             } else {
               onChange(item);
             }
@@ -49,10 +45,7 @@ const Menu = ({ item, children, onChange = defaultFn }) => {
                 <HeaderMenu
                   title="language"
                   onBack={() => {
-                    setMenu((prev) => {
-                      console.log(prev, prev.length);
-                      return prev.slice(0, prev.length - 1);
-                    });
+                    setMenu((prev) => prev.slice(0, prev.length - 1));
                   }}
                 />
               )}

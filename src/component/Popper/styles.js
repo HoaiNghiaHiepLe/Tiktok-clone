@@ -9,6 +9,7 @@ export const PopperWrapper = styled.ul`
   border-radius: 8px;
   margin-top: 8px;
   padding-top: 8px;
+  list-style-type: none;
   .search_title {
     height: 30px;
     padding: 5px 12px;

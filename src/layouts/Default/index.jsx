@@ -1,14 +1,16 @@
 import { Outlet, Navigate } from "react-router-dom";
-import Header from "~/component/Header";
-import SideBar from "../SideBar";
+import SideBar from "~/layouts/components/SideBar";
+
 import * as S from "./styles";
 const DefaultLayout = () => {
   return (
     <>
+      <S.DefaultHeader />
       <S.MainContainer>
-        <Header className="header_default" />
+        <div className="default_siderbar">
+          <SideBar />
+        </div>
         <S.MainContent>
-          <SideBar className="sidebar_default" />
           <Outlet />
         </S.MainContent>
       </S.MainContainer>

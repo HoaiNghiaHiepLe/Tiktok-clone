@@ -1,14 +1,15 @@
 import { Outlet, Navigate } from "react-router-dom";
-import Header from "~/component/Header";
-import SideBar from "../SideBar";
+import SideBar from "../components/SideBar";
 import * as S from "./styles";
 const FluidLayout = () => {
   return (
     <>
+      <S.FluidHeader />
       <S.MainContainer>
-        <Header className="header_fluid" />
-        <S.MainContent>
+        <div className="sidebar_container">
           <SideBar className="sidebar_fluid" />
+        </div>
+        <S.MainContent>
           <Outlet />
         </S.MainContent>
       </S.MainContainer>
