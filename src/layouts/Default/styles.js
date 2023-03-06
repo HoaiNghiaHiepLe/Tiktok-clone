@@ -23,12 +23,12 @@ export const MainContainer = styled.div`
     -ms-flex: 0 0 356px;
     flex: 0 0 356px;
     @media screen and (max-width: 767px) {
-      .css-1ebkqxa-DivSideNavContainer {
+      & {
         z-index: 99;
       }
     }
     @media screen and (max-width: 1071px) {
-      .css-1ebkqxa-DivSideNavContainer {
+      & {
         width: 72px;
         -webkit-flex: 0 0 72px;
         -ms-flex: 0 0 72px;
