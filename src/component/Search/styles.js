@@ -70,5 +70,18 @@ export const SearchWrapper = styled.div`
       font-size: 2.5rem;
       margin: 0px 12px;
     }
+
+    .loading_icon {
+      animation: spinner 1s linear infinite;
+    }
+
+    @keyframes spinner {
+      from {
+        transform: translateY(-50%) rotate(0);
+      }
+      to {
+        transform: translateY(-50%) rotate(360deg);
+      }
+    }
   }
 `;

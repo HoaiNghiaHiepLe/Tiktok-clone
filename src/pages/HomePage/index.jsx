@@ -1,7 +1,8 @@
 import React from "react";
 
+import * as S from "./styles";
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return <S.MainContainer>HomePage</S.MainContainer>;
 };
 
 export default HomePage;

@@ -6,5 +6,6 @@ export const ROUTES = {
   },
   PRIVATE: {
     DASHBOARD: "/dashboard",
+    PROFILE: "/:nickname",
   },
 };

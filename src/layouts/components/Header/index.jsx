@@ -5,14 +5,14 @@ import { MENU_ITEMS, userMenu } from "~/component/Popper/Menu/constants";
 import Button from "~/component/Button";
 import { PopperMenu } from "~/component/Popper";
 import images from "~/assets/images";
-import Image from "../Image";
-import Search from "../Search";
+import Image from "../../../component/Image";
+import Search from "../../../component/Search";
 import {
   EllipsisVerticalIcon,
   InboxIcon,
   MessageIcon,
   UploadIcon,
-} from "../Icons";
+} from "../../../component/Icons";
 
 import * as S from "./styles";
 const Header = ({ className }) => {
@@ -63,7 +63,7 @@ const Header = ({ className }) => {
             {currentUser ? (
               <Image
                 fallback="https://www.strivemindz.com/images/ReactJS-Developers.png"
-                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/dc60cb071cfa78089851f938d59db628~c5_300x300.webp?x-expires=1677672000&x-signature=mmXT2od3OsLROhQ4cn4A2XtHpL4%3D"
+                src="https://i.pravatar.cc/300"
                 alt="userAvatar"
                 className="user_avatar"
               />

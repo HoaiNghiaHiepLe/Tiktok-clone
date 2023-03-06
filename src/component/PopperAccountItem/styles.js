@@ -1,11 +1,14 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const AccountItemWrapper = styled.li`
   padding: 9px 16px;
   cursor: pointer;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
+  .account_link {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
   &:hover {
     background-color: rgba(22, 24, 35, 0.03);
   }
@@ -37,7 +40,7 @@ export const AccountItemWrapper = styled.li`
     min-width: 0px;
     .username {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       font-size: 1.6rem;
       line-height: 2.2rem;
@@ -45,6 +48,9 @@ export const AccountItemWrapper = styled.li`
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      span {
+        line-height: 2.2rem;
+      }
       .check_icon {
         font-size: 1.4rem;
         margin-left: 4px;

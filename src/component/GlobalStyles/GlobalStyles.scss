@@ -10,6 +10,8 @@
   --text-color: rgba(22, 24, 35, 1);
   --default-layout-width: 1150px;
   --default-layout-padding: 24px;
+  --default-sidebar-width: 356px;
+  --fluid-sidebar-width: 240px;
 }
 * {
   box-sizing: border-box;
@@ -75,4 +77,10 @@ body {
   .tippy-arrow {
     color: rgba(84, 84, 84, 0.92);
   }
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

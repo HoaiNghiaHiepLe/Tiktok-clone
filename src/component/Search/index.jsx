@@ -1,31 +1,51 @@
-import { useEffect, forwardRef, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
+
+import * as searchService from "~/apiService/searchService";
 import HeadlessTippy from "@tippyjs/react/headless";
 import { PopperWrapper } from "~/component/Popper";
 import PopperAccountItem from "../PopperAccountItem";
 import { LoadingCircleIcon, ResetSearchIcon, SearchIcon } from "../Icons";
+import { useDebounce } from "~/hooks";
+
 import * as S from "./styles";
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [showResult, setShowResult] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const debounced = useDebounce(searchValue, 500);
 
   const inputRef = useRef();
+
+  useEffect(() => {
+    if (!debounced.trim()) {
+      setSearchResult([]);
+      return;
+    }
+    const fetchApi = async () => {
+      setLoading(true);
+      const result = await searchService.search(debounced);
+      setSearchResult(result);
+      setLoading(false);
+    };
+    fetchApi();
+  }, [debounced]);
+
   const handleClearInput = (e) => {
     console.log(e.target.value);
     setSearchValue("");
     setSearchResult([]);
     inputRef.current.focus();
   };
-
+  const handleInputSearch = (e) => {
+    const value = e.target.value.trimStart();
+    setSearchValue(value);
+  };
   const handleHideResult = () => {
     setShowResult(false);
   };
-  useEffect(() => {
-    setTimeout(() => {
-      setSearchResult([1, 2, 3]);
-    }, 0);
-  }, []);
+
   return (
     <S.SearchWrapper>
       <HeadlessTippy
@@ -36,9 +56,9 @@ const Search = () => {
           <div className="search_result" tabIndex="-1" {...attrs}>
             <PopperWrapper>
               <div className="search_title">Account</div>
-              <PopperAccountItem />
-              <PopperAccountItem />
-              <PopperAccountItem />
+              {searchResult.map((result) => (
+                <PopperAccountItem key={result.id} data={result} />
+              ))}
             </PopperWrapper>
           </div>
         )}
@@ -52,17 +72,16 @@ const Search = () => {
             type="text"
             onChange={(e) => {
               console.log(e.target.value);
-              setSearchValue(e.target.value);
+              handleInputSearch(e);
             }}
             onFocus={() => setShowResult(true)}
           />
-          {!!searchValue && (
+          {!!searchValue && !loading && (
             <button className="clear_btn" onClick={(e) => handleClearInput(e)}>
               <ResetSearchIcon className="clear_icon" />
             </button>
           )}
-          {/* <LoadingCircleIcon className="loading_icon" /> */}
-
+          {loading && <LoadingCircleIcon className="loading_icon" />}
           <button className="search_btn">
             <SearchIcon className="search_icon" />
           </button>
