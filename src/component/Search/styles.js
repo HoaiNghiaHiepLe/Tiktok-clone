@@ -17,6 +17,7 @@ export const SearchWrapper = styled.div`
     border-radius: var(--search-border-radius);
     padding-left: 16px;
     input {
+      font-family: var(--font-family);
       flex: 1;
       color: var(--black);
       height: 100%;

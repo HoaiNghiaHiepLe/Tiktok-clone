@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import Button from "~/component/Button";
 
-const MenuItems = ({ data, onClick }) => {
+const MenuItems = ({ data, onClick, className }) => {
   return (
     <Button
       $separate={data.separate ? true : undefined}
       onClick={onClick}
-      className="menu_items"
+      className={className}
       prefixIcon={data.icon}
       to={data.to}
     >

@@ -2,7 +2,7 @@ import HomePage from "./HomePage";
 import Profile from "./Profile";
 import DashBoard from "./DashBoard";
 
-import { ROUTES } from "~/constants/routes";
+import { ROUTES } from "~/constants";
 
 export const defaultPages = [
   {

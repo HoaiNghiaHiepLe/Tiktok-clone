@@ -14,6 +14,7 @@ import {
   UploadIcon,
 } from "../../../component/Icons";
 
+import { ROUTES } from "~/constants";
 import * as S from "./styles";
 const Header = ({ className }) => {
   const handleOnChange = (menuItem) => {
@@ -23,7 +24,7 @@ const Header = ({ className }) => {
   return (
     <S.HeaderContainer>
       <S.HeaderContent className={className}>
-        <Link className="header_logo" to="/">
+        <Link className="header_logo" to={ROUTES.PUBLIC.HOME}>
           <img src={images.logo.default} alt="Tiktok" />
         </Link>
         <Search />

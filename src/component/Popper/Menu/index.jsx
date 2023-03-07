@@ -8,7 +8,12 @@ import * as S from "./styles";
 
 const defaultFn = () => {};
 
-const Menu = ({ item, children, onChange = defaultFn }) => {
+const Menu = ({
+  item,
+  children,
+  onChange = defaultFn,
+  hideOnClick = false,
+}) => {
   const [menu, setMenu] = useState([{ data: item }]);
   const currentMenu = menu[menu.length - 1];
 
@@ -19,6 +24,7 @@ const Menu = ({ item, children, onChange = defaultFn }) => {
         <MenuItems
           key={index}
           data={item}
+          className="menu_items"
           onClick={() => {
             if (isParent) {
               setMenu((prev) => [...prev, item.children]);
@@ -34,6 +40,7 @@ const Menu = ({ item, children, onChange = defaultFn }) => {
   return (
     <S.MenuWrapper>
       <Tippy
+        hideOnClick={hideOnClick}
         delay={[0, 700]}
         placement="bottom-end"
         offset={[10, 10]}
@@ -49,7 +56,7 @@ const Menu = ({ item, children, onChange = defaultFn }) => {
                   }}
                 />
               )}
-              {renderMenuItems()}
+              <div className="menu_scroll">{renderMenuItems()}</div>
             </PopperWrapper>
           </div>
         )}

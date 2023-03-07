@@ -3,7 +3,7 @@ import { Link, generatePath } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import Image from "../Image";
 import * as S from "./styles";
-import { ROUTES } from "~/constants/routes";
+import { ROUTES } from "~/constants";
 
 const PopperAccountItem = ({ data }) => {
   return (

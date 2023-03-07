@@ -4,12 +4,17 @@ export const MenuWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  .wrapper_menu {
-    padding-bottom: 8px;
-  }
   .popper_menu {
     width: 224px;
     padding-bottom: 8px;
+    .wrapper_menu {
+      padding-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    .menu_scroll {
+      overflow-y: auto;
+    }
     .menu_items {
       display: flex;
       justify-content: flex-start;
@@ -20,9 +25,14 @@ export const MenuWrapper = styled.div`
       width: 100%;
       border: none;
       margin: 0;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 2rem;
       &:hover {
         background-color: rgba(22, 24, 35, 0.03);
+      }
+      .title {
+        text-align: start;
       }
     }
     .separate {
@@ -32,6 +42,7 @@ export const MenuWrapper = styled.div`
 `;
 export const HeaderMenu = styled.div`
   display: flex;
+  flex-shrink: 0;
   -webkit-box-align: center;
   margin-top: -8px;
   align-items: center;

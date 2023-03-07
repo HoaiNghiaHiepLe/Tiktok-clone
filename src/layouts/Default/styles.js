@@ -15,7 +15,7 @@ export const MainContainer = styled.div`
   width: 100vw;
   max-width: var(--default-layout-width);
   font-size: 2.5rem;
-  margin-top: 60px;
+  margin-top: var(--default-header-height);
   .default_siderbar {
     position: relative;
     width: var(--default-sidebar-width);

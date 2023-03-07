@@ -15,6 +15,7 @@ export const buttonStyles = css`
   background-color: transparent;
   user-select: none;
   line-height: 2.2rem;
+  font-family: var(--font-family);
   .title {
     line-height: 2.4rem;
   }
