@@ -1,4 +1,4 @@
-export const ROUTES = {
+const ROUTES = {
   LOGIN: "/login",
   REGISTER: "/register",
   PUBLIC: {
@@ -9,3 +9,4 @@ export const ROUTES = {
     PROFILE: "/:nickname",
   },
 };
+export default ROUTES;

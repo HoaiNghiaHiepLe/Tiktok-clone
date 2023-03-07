@@ -38,15 +38,16 @@ const Search = () => {
     setSearchResult([]);
     inputRef.current.focus();
   };
-  const handleInputSearch = (e) => {
-    const value = e.target.value.trimStart();
-    setSearchValue(value);
+  const handleInputChange = (e) => {
+    const searchValue = e.target.value.trimStart();
+    setSearchValue(searchValue);
   };
   const handleHideResult = () => {
     setShowResult(false);
   };
 
   return (
+    // solve tippy warnings by wrapping with a div
     <S.SearchWrapper>
       <HeadlessTippy
         onClickOutside={() => handleHideResult()}
@@ -72,7 +73,7 @@ const Search = () => {
             type="text"
             onChange={(e) => {
               console.log(e.target.value);
-              handleInputSearch(e);
+              handleInputChange(e);
             }}
             onFocus={() => setShowResult(true)}
           />
@@ -82,7 +83,10 @@ const Search = () => {
             </button>
           )}
           {loading && <LoadingCircleIcon className="loading_icon" />}
-          <button className="search_btn">
+          <button
+            className="search_btn"
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <SearchIcon className="search_icon" />
           </button>
         </div>
