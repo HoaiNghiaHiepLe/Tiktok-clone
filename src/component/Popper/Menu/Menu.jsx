@@ -38,6 +38,28 @@ const Menu = ({
     });
   };
 
+  const handleOnBackMenu = () => {
+    setMenu((prev) => prev.slice(0, prev.length - 1));
+  };
+
+  const renderResult = (attrs) => (
+    <div className="popper_menu" tabIndex="-1" {...attrs}>
+      <PopperWrapper className="wrapper_menu">
+        {menu.length > 1 && (
+          <HeaderMenu
+            title={currentMenu.title}
+            onBack={() => handleOnBackMenu()}
+          />
+        )}
+        <div className="menu_scroll">{renderMenuItems()}</div>
+      </PopperWrapper>
+    </div>
+  );
+
+  const handleResetMenu = () => {
+    setMenu((prev) => prev.slice(0, 1));
+  };
+
   return (
     <S.MenuWrapper>
       <Tippy
@@ -46,22 +68,8 @@ const Menu = ({
         placement="bottom-end"
         offset={[10, 10]}
         interactive
-        render={(attrs) => (
-          <div className="popper_menu" tabIndex="-1" {...attrs}>
-            <PopperWrapper className="wrapper_menu">
-              {menu.length > 1 && (
-                <HeaderMenu
-                  title={currentMenu.title}
-                  onBack={() => {
-                    setMenu((prev) => prev.slice(0, prev.length - 1));
-                  }}
-                />
-              )}
-              <div className="menu_scroll">{renderMenuItems()}</div>
-            </PopperWrapper>
-          </div>
-        )}
-        onHide={() => setMenu((prev) => prev.slice(0, 1))}
+        render={renderResult}
+        onHide={() => handleResetMenu()}
       >
         {children}
       </Tippy>

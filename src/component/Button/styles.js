@@ -78,7 +78,7 @@ export const buttonStyles = css`
     }
   }
   &.outline {
-    color: var(--primary) !important;
+    color: var(--primary);
     border: solid 1px var(--primary);
     &:hover {
       background: rgba(254, 44, 85, 0.06);
@@ -87,7 +87,7 @@ export const buttonStyles = css`
   }
   &.primary {
     background-color: var(--primary);
-    color: #fff !important;
+    color: #fff;
     border-color: var(--primary);
     &:hover {
       border-color: var(--primary);
