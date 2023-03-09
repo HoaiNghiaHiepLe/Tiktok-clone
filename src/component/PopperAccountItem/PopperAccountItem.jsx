@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, generatePath } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
-import Image from "../Image";
+import Image from "../Image/Image";
 import * as S from "./styles";
 import { ROUTES } from "~/constants";
 

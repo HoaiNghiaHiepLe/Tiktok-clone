@@ -5,8 +5,8 @@ import { MENU_ITEMS, userMenu } from "~/component/Popper/Menu/constants";
 import Button from "~/component/Button";
 import { PopperMenu } from "~/component/Popper";
 import images from "~/assets/images";
-import Image from "../../../component/Image";
-import Search from "../../../component/Search";
+import Image from "../../../component/Image/Image";
+import Search from "../../../component/Search/Search";
 import {
   EllipsisVerticalIcon,
   InboxIcon,
