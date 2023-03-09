@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import Header from "~/layouts/components/Header";
+import Header from "~/layouts/components/Header/Header";
 
 export const DefaultHeader = styled(Header)`
   max-width: var(--default-layout-width);

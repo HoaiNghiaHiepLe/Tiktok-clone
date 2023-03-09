@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import Header from "~/layouts/components/Header";
+import Header from "~/layouts/components/Header/Header";
 
 export const FluidHeader = styled(Header)`
   padding: 0px var(--default-layout-padding);

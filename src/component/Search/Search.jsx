@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import * as searchService from "~/service/searchService";
 import HeadlessTippy from "@tippyjs/react/headless";
 import { PopperWrapper } from "~/component/Popper";
-import PopperAccountItem from "../PopperAccountItem";
+import PopperAccountItem from "../PopperAccountItem/PopperAccountItem";
 import { LoadingCircleIcon, ResetSearchIcon, SearchIcon } from "../Icons";
 import { useDebounce } from "~/hooks";
 

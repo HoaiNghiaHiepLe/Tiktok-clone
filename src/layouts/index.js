@@ -1,2 +1,2 @@
-export { default, default as DefaultLayout } from "./Default";
-export { default as FluidLayout } from "./Fluid";
+export { default, default as DefaultLayout } from "./Default/Default";
+export { default as FluidLayout } from "./Fluid/Fluid";
