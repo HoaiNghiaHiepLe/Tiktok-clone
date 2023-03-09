@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { BackIcon } from "~/component/Icons";
 
@@ -13,5 +14,8 @@ const HeaderMenu = ({ title, onBack }) => {
     </S.HeaderMenu>
   );
 };
-
+HeaderMenu.propTypes = {
+  title: PropTypes.string.isRequired,
+  onBack: PropTypes.func.isRequired,
+};
 export default HeaderMenu;

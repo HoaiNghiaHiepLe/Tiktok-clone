@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link, generatePath } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import Image from "../Image";
@@ -32,6 +33,10 @@ const PopperAccountItem = ({ data }) => {
       </Link>
     </S.AccountItemWrapper>
   );
+};
+
+PopperAccountItem.propTypes = {
+  data: PropTypes.object,
 };
 
 export default PopperAccountItem;

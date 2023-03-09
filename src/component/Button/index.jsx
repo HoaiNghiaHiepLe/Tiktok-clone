@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import * as S from "./styles";
@@ -12,8 +13,17 @@ const Button = forwardRef(
       children,
       className,
       prefixIcon,
-      sufixIcon,
+      suffixIcon,
       badge,
+      iconbtn,
+      primary,
+      outline,
+      text,
+      rounded,
+      disable,
+      small,
+      large,
+      $separate,
       ...restProps
     },
     ref
@@ -45,14 +55,47 @@ const Button = forwardRef(
       props.href = href;
     }
     return (
-      <StyledComponent ref={ref} className={className} {...props}>
+      <StyledComponent
+        iconbtn={iconbtn}
+        ref={ref}
+        className={className}
+        primary={primary}
+        outline={outline}
+        text={text}
+        rounded={rounded}
+        disable={disable}
+        small={small}
+        large={large}
+        $separate={$separate}
+        {...props}
+      >
         {prefixIcon && <span className="icon"> {prefixIcon}</span>}
         <span className="title">{children}</span>
-        {sufixIcon && <span className="icon"> {prefixIcon}</span>}
+        {suffixIcon && <span className="icon"> {prefixIcon}</span>}
         {badge && <span className="badge"> {badge}</span>}
       </StyledComponent>
     );
   }
 );
+
+Button.propTypes = {
+  onClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  prefixIcon: PropTypes.node,
+  suffixIcon: PropTypes.node,
+  badge: PropTypes.node,
+  iconbtn: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  className: PropTypes.string,
+  primary: PropTypes.bool,
+  outline: PropTypes.bool,
+  text: PropTypes.bool,
+  rounded: PropTypes.bool,
+  disable: PropTypes.bool,
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+  $separate: PropTypes.bool,
+};
 
 export default Button;
