@@ -21,6 +21,7 @@ export const SearchWrapper = styled.div`
       flex: 1;
       color: var(--black);
       height: 100%;
+      padding-right: 40px;
       font-size: 1.6rem;
       color: var(--text-gray);
       background-color: transparent;
