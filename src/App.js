@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import DefaultLayout from "./layouts/Default";
-import FluidLayout from "./layouts/Fluid";
+import DefaultLayout from "./layouts";
+import { FluidLayout } from "./layouts";
 
 import { defaultPages, fluidPages } from "./pages";
 function App() {

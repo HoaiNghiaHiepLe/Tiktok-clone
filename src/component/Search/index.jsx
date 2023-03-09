@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-import * as searchService from "~/apiService/searchService";
+import * as searchService from "~/service/searchService";
 import HeadlessTippy from "@tippyjs/react/headless";
 import { PopperWrapper } from "~/component/Popper";
 import PopperAccountItem from "../PopperAccountItem";
@@ -32,8 +32,7 @@ const Search = () => {
     fetchApi();
   }, [debounced]);
 
-  const handleClearInput = (e) => {
-    console.log(e.target.value);
+  const handleClearInput = () => {
     setSearchValue("");
     setSearchResult([]);
     inputRef.current.focus();
@@ -72,7 +71,6 @@ const Search = () => {
             spellCheck={false}
             type="text"
             onChange={(e) => {
-              console.log(e.target.value);
               handleInputChange(e);
             }}
             onFocus={() => setShowResult(true)}

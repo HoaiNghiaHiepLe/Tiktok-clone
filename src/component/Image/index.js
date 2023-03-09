@@ -1,4 +1,5 @@
 import { forwardRef, useState } from "react";
+import PropTypes from "prop-types";
 import images from "~/assets/images";
 import * as S from "./styles";
 
@@ -30,5 +31,12 @@ const Image = forwardRef(
     );
   }
 );
+
+Image.propTypes = {
+  fallback: PropTypes.string,
+  className: PropTypes.string,
+  src: PropTypes.string,
+  alt: PropTypes.string,
+};
 
 export default Image;

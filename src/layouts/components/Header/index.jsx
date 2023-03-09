@@ -40,13 +40,17 @@ const Header = ({ className }) => {
                   iconbtn="true"
                   prefixIcon={<MessageIcon className="icon" />}
                   badge={1}
-                />
+                >
+                  {""}
+                </Button>
               </Tippy>
               <Tippy delay={[100, 200]} content="Mailbox" placement="bottom">
                 <Button
                   iconbtn="true"
                   prefixIcon={<InboxIcon className="icon" />}
-                />
+                >
+                  {""}
+                </Button>
               </Tippy>
             </>
           ) : (

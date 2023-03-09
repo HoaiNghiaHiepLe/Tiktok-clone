@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tippy from "@tippyjs/react/headless";
+import PropTypes from "prop-types";
 
 import MenuItems from "./MenuItems";
 import { PopperWrapper } from "~/component/Popper";
@@ -9,7 +10,7 @@ import * as S from "./styles";
 const defaultFn = () => {};
 
 const Menu = ({
-  item,
+  item = [],
   children,
   onChange = defaultFn,
   hideOnClick = false,
@@ -50,7 +51,7 @@ const Menu = ({
             <PopperWrapper className="wrapper_menu">
               {menu.length > 1 && (
                 <HeaderMenu
-                  title="language"
+                  title={currentMenu.title}
                   onBack={() => {
                     setMenu((prev) => prev.slice(0, prev.length - 1));
                   }}
@@ -67,5 +68,10 @@ const Menu = ({
     </S.MenuWrapper>
   );
 };
-
+Menu.propTypes = {
+  children: PropTypes.node.isRequired,
+  item: PropTypes.array,
+  onChange: PropTypes.func,
+  hideOnClick: PropTypes.bool,
+};
 export default Menu;

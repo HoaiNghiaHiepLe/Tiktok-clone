@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 import Button from "~/component/Button";
 
@@ -16,4 +17,9 @@ const MenuItems = ({ data, onClick, className }) => {
   );
 };
 
+MenuItems.propTypes = {
+  data: PropTypes.object.isRequired,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+};
 export default MenuItems;
