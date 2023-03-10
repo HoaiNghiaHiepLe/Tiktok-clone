@@ -6,7 +6,7 @@ import Button from "~/component/Button";
 import { PopperMenu } from "~/component/Popper";
 import images from "~/assets/images";
 import Image from "../../../component/Image/Image";
-import Search from "../../../component/Search/Search";
+import Search from "~/layouts/components/Search";
 import {
   EllipsisVerticalIcon,
   InboxIcon,

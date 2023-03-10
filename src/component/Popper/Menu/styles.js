@@ -19,15 +19,14 @@ export const MenuWrapper = styled.div`
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      line-height: 1.8rem;
       border-radius: 0;
       padding: 10px 8px 12px 16px;
       width: 100%;
       border: none;
       margin: 0;
-      font-weight: 400;
-      font-size: 1.4rem;
-      line-height: 2rem;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
       &:hover {
         background-color: rgba(22, 24, 35, 0.03);
       }
@@ -37,6 +36,11 @@ export const MenuWrapper = styled.div`
     }
     .separate {
       border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+    .regular {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 2rem;
     }
   }
 `;
