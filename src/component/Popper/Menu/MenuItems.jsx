@@ -6,6 +6,7 @@ import Button from "~/component/Button";
 const MenuItems = ({ data, onClick, className }) => {
   return (
     <Button
+      $regular={data.regular ? true : undefined}
       $separate={data.separate ? true : undefined}
       onClick={onClick}
       className={className}

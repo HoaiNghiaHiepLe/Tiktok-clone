@@ -130,6 +130,7 @@ const buttonAttrs = (props) => ({
     ${props.large ? "large" : ""}
     ${props.iconbtn ? "iconbtn" : ""}
     ${props.$separate ? "separate" : ""}
+    ${props.$regular ? "regular" : ""}
     ${props.className ? props.className : ""}
   `.trim(),
 });

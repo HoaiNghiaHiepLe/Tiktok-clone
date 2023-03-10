@@ -24,6 +24,7 @@ const Button = forwardRef(
       small,
       large,
       $separate,
+      $regular,
       ...restProps
     },
     ref
@@ -67,6 +68,7 @@ const Button = forwardRef(
         small={small}
         large={large}
         $separate={$separate}
+        $regular={$regular}
         {...props}
       >
         {prefixIcon && <span className="icon"> {prefixIcon}</span>}
@@ -96,6 +98,7 @@ Button.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   $separate: PropTypes.bool,
+  $regularText: PropTypes.bool,
 };
 
 export default Button;
