@@ -17,16 +17,8 @@ export const MenuItem = styled(NavLink)`
     .title {
       color: var(--primary);
     }
-    .icon {
-      display: none;
-    }
-    .active_icon {
-      display: flex;
-    }
   }
-  .active_icon {
-    display: none;
-  }
+
   &:hover {
     background-color: rgba(22, 24, 35, 0.03);
   }

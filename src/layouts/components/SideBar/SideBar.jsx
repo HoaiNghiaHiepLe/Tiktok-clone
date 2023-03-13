@@ -1,9 +1,7 @@
 import React from "react";
 
-import Button from "~/component/Button";
 import Menu, { MenuItem } from "~/layouts/components/SideBar/Menu";
 import { ROUTES } from "~/constants";
-import * as S from "./styles";
 import {
   HomeIconOutlined,
   UserGroupIconOutlined,
@@ -12,7 +10,15 @@ import {
   UserGroupIconSolid,
   LiveIconSolid,
 } from "~/component/Icons";
+import SuggestedAccounts from "~/component/SuggestedAccounts";
+
+import * as S from "./styles";
 const Sidebar = ({ className }) => {
+  const accounts = [
+    { id: 1, name: "Account 1" },
+    { id: 2, name: "Account 2" },
+    { id: 3, name: "Account 3" },
+  ];
   return (
     <S.SidebarContainer className={className}>
       <S.SidebarContent>
@@ -37,6 +43,12 @@ const Sidebar = ({ className }) => {
               activeIcon={<LiveIconSolid />}
             />
           </Menu>
+          <SuggestedAccounts accounts={accounts} label="Suggested accounts" />
+          <SuggestedAccounts
+            accounts={accounts}
+            label="Following accounts"
+            hidePreview
+          />
         </aside>
       </S.SidebarContent>
     </S.SidebarContainer>
