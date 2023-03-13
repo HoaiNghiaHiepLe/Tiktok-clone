@@ -7,9 +7,14 @@ import * as S from "./styles";
 const MenuItem = ({ title, to, icon, activeIcon }) => {
   return (
     <S.MenuItem to={to}>
-      <span className="icon">{icon}</span>
-      <span className="active_icon">{activeIcon}</span>
-      <h2 className="title">{title}</h2>
+      {({ isActive }) => (
+        <>
+          <span className={isActive ? "active_icon" : "icon"}>
+            {isActive ? activeIcon : icon}
+          </span>
+          <h2 className="title">{title}</h2>
+        </>
+      )}
     </S.MenuItem>
   );
 };
